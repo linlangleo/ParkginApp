@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId "com.example.leo.parkingapp"
+        minSdkVersion 18
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'x86' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+    sourceSets{
+        main{
+            jniLibs.srcDir 'libs'
+            jni.srcDirs = []
+
+//            jniLibs.srcDirs = ['libs']
+//            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+//添加本地的仓库
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    //TabLayout
+    compile 'com.android.support:design:24.2.1'
+    //CircleImageView
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //百度地图
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile files('libs/nanohttpd-2.3.0.jar')
+    compile files('libs/ksoap2-android-assembly-2.6.5-jar-with-dependencies.jar')
+    //科大讯飞语音
+    compile files('libs/Msc.jar')
+    compile files('libs/Sunflower.jar')
+    //GSON
+    compile 'com.google.code.gson:gson:2.8.2'
+    //RxVolly
+    compile 'com.kymjs.rxvolley:rxvolley:1.1.4'
+    //文件压缩
+    compile 'com.ghnor:flora:1.0.0-alpha1'
+
+    compile 'com.guo.android_extend:android-extend:1.0.5'
+}

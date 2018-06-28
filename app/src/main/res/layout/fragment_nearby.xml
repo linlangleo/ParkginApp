@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/mMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+
+    <ImageButton
+        android:id="@+id/ib_relocation"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_relocation"
+        android:background="@drawable/imageview_bg_white"
+        android:elevation="5dip"/>
+    <RelativeLayout
+        android:id="@+id/search_maps_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/imageview_bg_white"
+        android:elevation="3dip">
+        <ImageView
+            android:id="@+id/dialog_search_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="2dp"
+            android:background="@drawable/imageview_bg_white"
+            android:src="@drawable/ic_search"/>
+        <ImageButton
+            android:id="@+id/dialog_serach_btn_search"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="2dp"
+            android:background="@drawable/imageview_bg_white"
+            android:src="@drawable/ic_sound"/>
+        <TextView
+            android:id="@+id/tv_seek"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="#FCFCFC"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_sound"
+            android:textSize="40px"
+            android:hint="搜索地点"/>
+    </RelativeLayout>
+
+    <com.example.leo.parkingapp.utils.AutoScrollTopBottomView
+        android:id="@+id/astbv_nearby_scroll_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <ScrollView
+                android:id="@+id/sv_nearby_scroll_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/ll_bottom_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                    android:id="@+id/tv0"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:text="地址:"
+                    android:textSize="20sp" />
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv0"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="我是顶层的View0"-->
+                        <!--android:textSize="20sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv1"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="我是顶层的View1"-->
+                        <!--android:textSize="20sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv2"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="我是顶层的View2"-->
+                        <!--android:textSize="20sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv3"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="我是顶层的View3"-->
+                        <!--android:textSize="20sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv4"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="我是顶层的View4"-->
+                        <!--android:textSize="20sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv5"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="我是顶层的View5"-->
+                        <!--android:textSize="20sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv6"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="我是顶层的View6"-->
+                        <!--android:textSize="20sp" />-->
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+    </com.example.leo.parkingapp.utils.AutoScrollTopBottomView>
+
+</RelativeLayout>
